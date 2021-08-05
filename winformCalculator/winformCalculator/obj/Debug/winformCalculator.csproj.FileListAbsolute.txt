@@ -1,2 +1,10 @@
 D:\C#Study\calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.exe.config
 D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.exe.config
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.exe
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.pdb
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\obj\Debug\winformCalculator.csprojResolveAssemblyReference.cache
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\obj\Debug\winformCalculator.Form1.resources
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\obj\Debug\winformCalculator.Properties.Resources.resources
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\obj\Debug\winformCalculator.csproj.GenerateResource.Cache
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\obj\Debug\winformCalculator.exe
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\obj\Debug\winformCalculator.pdb
