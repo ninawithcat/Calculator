@@ -33,7 +33,7 @@ namespace winformCalculator
         {
             if (sign == "")
             {
-                if (sign == "" && count1 != 0 && result == 0)
+                if (sign == "" && count1 != 0 && ts == 0)
                 {
                     count1 = 0;
                 }
@@ -56,7 +56,7 @@ namespace winformCalculator
                 ts = '\0';
             }
             txtShowCount.Text = count1.ToString();
-            txtShowCount.Text = txtShowCount.Text + ((Button)sender).Text;     //符号赋给计算区
+            txtShowCount.Text = count1.ToString() + ((Button)sender).Text;     //符号赋给计算区
             sign = ((Button)sender).Text;                                      //符号赋值
         }
         private void btnNegate_Click(object sender, EventArgs e)               //取反
