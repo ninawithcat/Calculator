@@ -15,8 +15,10 @@ namespace winformCalculator
         public double count1 = 0;     //计数器1（用于两数计算）
         public double count2 = 0;     //计数器2（用于两数计算）
         public double result = 0;     //结果
+        public double ts = 0;         //暂存
         public string sign = "";      //符号
         public bool negate = true;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,9 +33,14 @@ namespace winformCalculator
         {
             if (sign == "")
             {
+                if (sign == "" && count1 != 0 && result == 0)
+                {
+                    count1 = 0;
+                }
                 count1 = count1 * 10 + double.Parse(((Button)sender).Text);
                 txtShowCount.Text = "";
                 txtShow.Text = count1.ToString();
+                ts = count1;
             }      
             else if(sign != "")
             {
@@ -43,10 +50,10 @@ namespace winformCalculator
         }
         private void btnOperator_Click(object sender, EventArgs e)           //取符号   
         {
-            if (result != '\0')
+            if (ts != '\0')
             {
-                count1 = result;
-                result = '\0';
+                count1 = ts;
+                ts = '\0';
             }
             txtShowCount.Text = count1.ToString();
             txtShowCount.Text = txtShowCount.Text + ((Button)sender).Text;     //符号赋给计算区
@@ -98,9 +105,12 @@ namespace winformCalculator
                 txtShowCount.Text = count1.ToString() + sign + count2.ToString() + "=";
                 txtShow.Text = Convert.ToString(result);
             }
+            ts = result;
+            result = 0;
             count1 = 0;
             count2 = 0;
             sign = "";
+            
         }
         private void btnClear_Click(object sender, EventArgs e)         //清除全部(C)
         {
