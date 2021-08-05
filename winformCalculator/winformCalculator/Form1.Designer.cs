@@ -95,10 +95,10 @@
             // 
             this.txtShowCount.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtShowCount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShowCount.Font = new System.Drawing.Font("微软雅黑", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtShowCount.Location = new System.Drawing.Point(13, 35);
+            this.txtShowCount.Font = new System.Drawing.Font("微软雅黑", 12.2F);
+            this.txtShowCount.Location = new System.Drawing.Point(13, 46);
             this.txtShowCount.Name = "txtShowCount";
-            this.txtShowCount.Size = new System.Drawing.Size(378, 63);
+            this.txtShowCount.Size = new System.Drawing.Size(378, 27);
             this.txtShowCount.TabIndex = 25;
             this.txtShowCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -106,12 +106,13 @@
             // 
             this.txtShow.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtShow.Font = new System.Drawing.Font("微软雅黑", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtShow.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtShow.Location = new System.Drawing.Point(7, 104);
             this.txtShow.Name = "txtShow";
-            this.txtShow.Size = new System.Drawing.Size(378, 63);
+            this.txtShow.Size = new System.Drawing.Size(384, 80);
             this.txtShow.TabIndex = 24;
             this.txtShow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtShow.TextChanged += new System.EventHandler(this.txtShow_TextChanged);
             // 
             // btnEqual
             // 

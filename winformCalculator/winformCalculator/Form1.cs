@@ -41,6 +41,7 @@ namespace winformCalculator
                 txtShowCount.Text = "";
                 txtShow.Text = count1.ToString();
                 ts = count1;
+                result = 0;
             }      
             else if(sign != "")
             {
@@ -50,10 +51,10 @@ namespace winformCalculator
         }
         private void btnOperator_Click(object sender, EventArgs e)           //取符号   
         {
-            if (ts != '\0')
+            if (result != '\0')
             {
                 count1 = ts;
-                ts = '\0';
+                result = '\0';
             }
             txtShowCount.Text = count1.ToString();
             txtShowCount.Text = count1.ToString() + ((Button)sender).Text;     //符号赋给计算区
@@ -76,11 +77,24 @@ namespace winformCalculator
                 count2 = -count1;
                 txtShow.Text = count2.ToString();
             }
-
         }
         private void btnReciprocal_Click(object sender, EventArgs e)         //倒数
         {
-
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = 1/count1;
+                txtShowCount.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                count2 = 1/count2;
+                txtShow.Text = count2.ToString();
+            }
+            if (count1 != 0 && sign == "" && count2 != 0)
+            {
+                count2 = 1/count1;
+                txtShow.Text = count2.ToString();
+            }
         }
         private void btnEqual_Click(object sender, EventArgs e)              //运算 
         {
@@ -109,7 +123,6 @@ namespace winformCalculator
                 txtShow.Text = Convert.ToString(result);
             }
             ts = result;
-            result = 0;
             count1 = 0;
             count2 = 0;
             sign = "";
@@ -126,6 +139,14 @@ namespace winformCalculator
         private void btnClearEntry_Click(object sender, EventArgs e)    //清除结果(CE)
         {
             txtShow.Text = "";
+        }
+
+        private void txtShow_TextChanged(object sender, EventArgs e)    //改变txtBox里数字的大小
+        {
+            while (txtShow.Text.Length > 10 && txtShow.Font.Size != 18)
+            {
+                txtShow.Font = new Font(txtShow.Font.FontFamily, 18, txtShow.Font.Style); 
+            }
         }
 
     }
