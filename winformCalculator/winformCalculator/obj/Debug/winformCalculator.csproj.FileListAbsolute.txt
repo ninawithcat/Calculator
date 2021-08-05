@@ -1,0 +1,1 @@
+D:\C#Study\calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.exe.config
