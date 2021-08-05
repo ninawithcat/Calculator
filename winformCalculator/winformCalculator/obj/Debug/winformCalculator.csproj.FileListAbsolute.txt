@@ -1,1 +1,2 @@
 D:\C#Study\calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.exe.config
+D:\C#Study\GitClone\Calculator\winformCalculator\winformCalculator\bin\Debug\winformCalculator.exe.config
