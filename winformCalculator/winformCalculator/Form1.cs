@@ -59,7 +59,7 @@ namespace winformCalculator
             txtShowCount.Text = txtShowCount.Text + ((Button)sender).Text;     //符号赋给计算区
             sign = ((Button)sender).Text;                                      //符号赋值
         }
-        private void btnNegate_Click(object sender, EventArgs e)
+        private void btnNegate_Click(object sender, EventArgs e)               //取反
         {
             if (count1 != 0 && count2 == 0 && sign =="")
             {
@@ -76,7 +76,10 @@ namespace winformCalculator
                 count2 = -count1;
                 txtShow.Text = count2.ToString();
             }
-         //   negate = !negate;
+
+        }
+        private void btnReciprocal_Click(object sender, EventArgs e)         //倒数
+        {
 
         }
         private void btnEqual_Click(object sender, EventArgs e)              //运算 
@@ -124,5 +127,6 @@ namespace winformCalculator
         {
             txtShow.Text = "";
         }
+
     }
 }

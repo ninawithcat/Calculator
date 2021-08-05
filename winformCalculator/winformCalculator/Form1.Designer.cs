@@ -175,6 +175,7 @@
             this.btnReciprocal.TabIndex = 4;
             this.btnReciprocal.Text = "1/x";
             this.btnReciprocal.UseVisualStyleBackColor = true;
+            this.btnReciprocal.Click += new System.EventHandler(this.btnReciprocal_Click);
             // 
             // button50
             // 
