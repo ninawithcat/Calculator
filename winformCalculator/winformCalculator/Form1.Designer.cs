@@ -32,12 +32,12 @@
             this.txtShowCount = new System.Windows.Forms.TextBox();
             this.txtShow = new System.Windows.Forms.TextBox();
             this.btnEqual = new System.Windows.Forms.Button();
-            this.button53 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnClearEntry = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSqrt = new System.Windows.Forms.Button();
             this.btnReciprocal = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
             this.BtnSq = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.btnSub = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
             this.btnNegate = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnPoint = new System.Windows.Forms.Button();
             this.pnlStandard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,12 +63,12 @@
             this.pnlStandard.Controls.Add(this.txtShowCount);
             this.pnlStandard.Controls.Add(this.txtShow);
             this.pnlStandard.Controls.Add(this.btnEqual);
-            this.pnlStandard.Controls.Add(this.button53);
+            this.pnlStandard.Controls.Add(this.btnBack);
             this.pnlStandard.Controls.Add(this.btnClearEntry);
             this.pnlStandard.Controls.Add(this.btnClear);
             this.pnlStandard.Controls.Add(this.btnSqrt);
             this.pnlStandard.Controls.Add(this.btnReciprocal);
-            this.pnlStandard.Controls.Add(this.button50);
+            this.pnlStandard.Controls.Add(this.btnPercent);
             this.pnlStandard.Controls.Add(this.btn9);
             this.pnlStandard.Controls.Add(this.BtnSq);
             this.pnlStandard.Controls.Add(this.btn8);
@@ -85,7 +85,7 @@
             this.pnlStandard.Controls.Add(this.btnSub);
             this.pnlStandard.Controls.Add(this.btnDiv);
             this.pnlStandard.Controls.Add(this.btnNegate);
-            this.pnlStandard.Controls.Add(this.button22);
+            this.pnlStandard.Controls.Add(this.btnPoint);
             this.pnlStandard.Location = new System.Drawing.Point(0, -1);
             this.pnlStandard.Name = "pnlStandard";
             this.pnlStandard.Size = new System.Drawing.Size(400, 547);
@@ -101,6 +101,7 @@
             this.txtShowCount.Size = new System.Drawing.Size(378, 63);
             this.txtShowCount.TabIndex = 25;
             this.txtShowCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtShowCount.TextChanged += new System.EventHandler(this.txtShowCount_TextChanged);
             // 
             // txtShow
             // 
@@ -111,7 +112,9 @@
             this.txtShow.Name = "txtShow";
             this.txtShow.Size = new System.Drawing.Size(378, 63);
             this.txtShow.TabIndex = 24;
+            this.txtShow.Text = "0";
             this.txtShow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtShow.TextChanged += new System.EventHandler(this.txtShow_TextChanged);
             // 
             // btnEqual
             // 
@@ -124,15 +127,16 @@
             this.btnEqual.UseVisualStyleBackColor = true;
             this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
             // 
-            // button53
+            // btnBack
             // 
-            this.button53.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
-            this.button53.Location = new System.Drawing.Point(300, 200);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(91, 52);
-            this.button53.TabIndex = 3;
-            this.button53.Text = "🔙";
-            this.button53.UseVisualStyleBackColor = true;
+            this.btnBack.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
+            this.btnBack.Location = new System.Drawing.Point(300, 200);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(91, 52);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "🔙";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClearEntry
             // 
@@ -165,6 +169,7 @@
             this.btnSqrt.TabIndex = 6;
             this.btnSqrt.Text = "²√x";
             this.btnSqrt.UseVisualStyleBackColor = true;
+            this.btnSqrt.Click += new System.EventHandler(this.btnSqrt_Click);
             // 
             // btnReciprocal
             // 
@@ -175,16 +180,18 @@
             this.btnReciprocal.TabIndex = 4;
             this.btnReciprocal.Text = "1/x";
             this.btnReciprocal.UseVisualStyleBackColor = true;
+            this.btnReciprocal.Click += new System.EventHandler(this.btnReciprocal_Click);
             // 
-            // button50
+            // btnPercent
             // 
-            this.button50.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
-            this.button50.Location = new System.Drawing.Point(10, 199);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(91, 52);
-            this.button50.TabIndex = 0;
-            this.button50.Text = "%";
-            this.button50.UseVisualStyleBackColor = true;
+            this.btnPercent.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
+            this.btnPercent.Location = new System.Drawing.Point(10, 199);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(91, 52);
+            this.btnPercent.TabIndex = 0;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btn9
             // 
@@ -206,6 +213,7 @@
             this.BtnSq.TabIndex = 5;
             this.BtnSq.Text = "x²";
             this.BtnSq.UseVisualStyleBackColor = true;
+            this.BtnSq.Click += new System.EventHandler(this.BtnSq_Click);
             // 
             // btn8
             // 
@@ -304,6 +312,7 @@
             this.btn0.TabIndex = 21;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btnNumber_Click);
             // 
             // btnAdd
             // 
@@ -360,15 +369,16 @@
             this.btnNegate.UseVisualStyleBackColor = true;
             this.btnNegate.Click += new System.EventHandler(this.btnNegate_Click);
             // 
-            // button22
+            // btnPoint
             // 
-            this.button22.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button22.Location = new System.Drawing.Point(203, 489);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(91, 52);
-            this.button22.TabIndex = 22;
-            this.button22.Text = ".";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnPoint.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnPoint.Location = new System.Drawing.Point(203, 489);
+            this.btnPoint.Name = "btnPoint";
+            this.btnPoint.Size = new System.Drawing.Size(91, 52);
+            this.btnPoint.TabIndex = 22;
+            this.btnPoint.Text = ".";
+            this.btnPoint.UseVisualStyleBackColor = true;
+            this.btnPoint.Click += new System.EventHandler(this.btnPoint_Click);
             // 
             // Form1
             // 
@@ -390,12 +400,12 @@
         private System.Windows.Forms.Panel pnlStandard;
         private System.Windows.Forms.TextBox txtShow;
         private System.Windows.Forms.Button btnEqual;
-        private System.Windows.Forms.Button button53;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClearEntry;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSqrt;
         private System.Windows.Forms.Button btnReciprocal;
-        private System.Windows.Forms.Button button50;
+        private System.Windows.Forms.Button btnPercent;
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button BtnSq;
         private System.Windows.Forms.Button btn8;
@@ -412,7 +422,7 @@
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnDiv;
         private System.Windows.Forms.Button btnNegate;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnPoint;
         private System.Windows.Forms.TextBox txtShowCount;
 
     }
