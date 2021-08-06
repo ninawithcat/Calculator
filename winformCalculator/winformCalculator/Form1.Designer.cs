@@ -166,6 +166,7 @@
             this.btnSqrt.TabIndex = 6;
             this.btnSqrt.Text = "²√x";
             this.btnSqrt.UseVisualStyleBackColor = true;
+            this.btnSqrt.Click += new System.EventHandler(this.btnSqrt_Click);
             // 
             // btnReciprocal
             // 
@@ -208,6 +209,7 @@
             this.BtnSq.TabIndex = 5;
             this.BtnSq.Text = "x²";
             this.BtnSq.UseVisualStyleBackColor = true;
+            this.BtnSq.Click += new System.EventHandler(this.BtnSq_Click);
             // 
             // btn8
             // 

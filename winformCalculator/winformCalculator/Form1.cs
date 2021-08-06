@@ -72,7 +72,7 @@ namespace winformCalculator
                 count2 = -count2;
                 txtShow.Text = count2.ToString();
             }
-            if (count1 !=0 && sign =="" && count2 !=0)
+            if (count1 !=0 && sign !="" && count2 ==0)
             {
                 count2 = -count1;
                 txtShow.Text = count2.ToString();
@@ -90,9 +90,45 @@ namespace winformCalculator
                 count2 = 1/count2;
                 txtShow.Text = count2.ToString();
             }
-            if (count1 != 0 && sign == "" && count2 != 0)
+            if (count1 != 0 && sign != "" && count2 == 0)
             {
                 count2 = 1/count1;
+                txtShow.Text = count2.ToString();
+            }
+        }
+        private void BtnSq_Click(object sender, EventArgs e)                 //平方 
+        {
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = count1 * count1;
+                txtShowCount.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                count2 = count2 * count2;
+                txtShow.Text = count2.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 == 0)
+            {
+                count2 = count1 * count1;
+                txtShow.Text = count2.ToString();
+            }
+        }
+        private void btnSqrt_Click(object sender, EventArgs e)               //开平方
+        {
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = Math.Sqrt(count1);
+                txtShowCount.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                count2 = Math.Sqrt(count2);
+                txtShow.Text = count2.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 == 0)
+            {
+                count2 = Math.Sqrt(count1);
                 txtShow.Text = count2.ToString();
             }
         }
@@ -130,8 +166,10 @@ namespace winformCalculator
         }
         private void btnClear_Click(object sender, EventArgs e)         //清除全部(C)
         {
+            ts = 0;
             count1 = 0;
             count2 = 0;
+            result = '\0';
             txtShow.Text = "";
             txtShowCount.Text = "";
         }
@@ -148,6 +186,5 @@ namespace winformCalculator
                 txtShow.Font = new Font(txtShow.Font.FontFamily, 18, txtShow.Font.Style); 
             }
         }
-
     }
 }
