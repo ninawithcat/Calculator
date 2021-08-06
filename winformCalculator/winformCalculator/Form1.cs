@@ -11,11 +11,11 @@ using System.Windows.Forms;
 namespace winformCalculator
 {
     public partial class Form1 : Form
-    {  
+    {
+        public double decimal1 = 1;   //计数小数（用于两数计算）
         public double count1 = 0;     //计数器1（用于两数计算）
         public double count2 = 0;     //计数器2（用于两数计算）
         public double result = 0;     //结果
-        public int decimal1 = 0;      //计数小数（用于两数计算）
         public double ts = 0;         //暂存
         public string sign = "";      //符号
 
@@ -39,19 +39,18 @@ namespace winformCalculator
                 if (txtShow.Text.IndexOf(".") > 0)
                 {
                     txtShow.Text = txtShow.Text + "0";
-                    decimal1++;
+                    decimal1 = decimal1 * 10;
                 }
             }
             if (txtShow.Text.IndexOf(".") > 0 && ((Button)sender).Text != "0")
             {
-                count1 = count1 * 10 + double.Parse(((Button)sender).Text);
-                count1 = count1/Math.Pow(10,decimal1);
+                count1 = count1  + double.Parse(((Button)sender).Text) / decimal1;
                 txtShowCount.Text = "";
                 txtShow.Text = count1.ToString();
                 ts = count1;
                 result = 0;
             }
-            if (sign == "" && ((Button)sender).Text != "0")
+            if (sign == "" && ((Button)sender).Text != "0" )
             {
                 if (sign == "" && count1 != 0 && ts == 0)
                 {
@@ -157,7 +156,6 @@ namespace winformCalculator
             if (txtShow.Text == "0")
             {
                 txtShow.Text = "0.";
-                decimal1 ++;
             }
             else if (txtShow.Text.IndexOf(".") >= 0)
             {
