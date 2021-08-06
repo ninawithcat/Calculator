@@ -32,7 +32,7 @@
             this.txtShowCount = new System.Windows.Forms.TextBox();
             this.txtShow = new System.Windows.Forms.TextBox();
             this.btnEqual = new System.Windows.Forms.Button();
-            this.button53 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnClearEntry = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSqrt = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.btnSub = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
             this.btnNegate = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnPoint = new System.Windows.Forms.Button();
             this.pnlStandard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.pnlStandard.Controls.Add(this.txtShowCount);
             this.pnlStandard.Controls.Add(this.txtShow);
             this.pnlStandard.Controls.Add(this.btnEqual);
-            this.pnlStandard.Controls.Add(this.button53);
+            this.pnlStandard.Controls.Add(this.btnBack);
             this.pnlStandard.Controls.Add(this.btnClearEntry);
             this.pnlStandard.Controls.Add(this.btnClear);
             this.pnlStandard.Controls.Add(this.btnSqrt);
@@ -85,7 +85,7 @@
             this.pnlStandard.Controls.Add(this.btnSub);
             this.pnlStandard.Controls.Add(this.btnDiv);
             this.pnlStandard.Controls.Add(this.btnNegate);
-            this.pnlStandard.Controls.Add(this.button22);
+            this.pnlStandard.Controls.Add(this.btnPoint);
             this.pnlStandard.Location = new System.Drawing.Point(0, -1);
             this.pnlStandard.Name = "pnlStandard";
             this.pnlStandard.Size = new System.Drawing.Size(400, 547);
@@ -111,6 +111,7 @@
             this.txtShow.Name = "txtShow";
             this.txtShow.Size = new System.Drawing.Size(384, 80);
             this.txtShow.TabIndex = 24;
+            this.txtShow.Text = "0";
             this.txtShow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtShow.TextChanged += new System.EventHandler(this.txtShow_TextChanged);
             // 
@@ -125,15 +126,16 @@
             this.btnEqual.UseVisualStyleBackColor = true;
             this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
             // 
-            // button53
+            // btnBack
             // 
-            this.button53.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
-            this.button53.Location = new System.Drawing.Point(300, 200);
-            this.button53.Name = "button53";
-            this.button53.Size = new System.Drawing.Size(91, 52);
-            this.button53.TabIndex = 3;
-            this.button53.Text = "🔙";
-            this.button53.UseVisualStyleBackColor = true;
+            this.btnBack.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
+            this.btnBack.Location = new System.Drawing.Point(300, 200);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(91, 52);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "🔙";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClearEntry
             // 
@@ -308,6 +310,7 @@
             this.btn0.TabIndex = 21;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btnNumber_Click);
             // 
             // btnAdd
             // 
@@ -364,15 +367,16 @@
             this.btnNegate.UseVisualStyleBackColor = true;
             this.btnNegate.Click += new System.EventHandler(this.btnNegate_Click);
             // 
-            // button22
+            // btnPoint
             // 
-            this.button22.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button22.Location = new System.Drawing.Point(203, 489);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(91, 52);
-            this.button22.TabIndex = 22;
-            this.button22.Text = ".";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnPoint.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnPoint.Location = new System.Drawing.Point(203, 489);
+            this.btnPoint.Name = "btnPoint";
+            this.btnPoint.Size = new System.Drawing.Size(91, 52);
+            this.btnPoint.TabIndex = 22;
+            this.btnPoint.Text = ".";
+            this.btnPoint.UseVisualStyleBackColor = true;
+            this.btnPoint.Click += new System.EventHandler(this.btnPoint_Click);
             // 
             // Form1
             // 
@@ -394,7 +398,7 @@
         private System.Windows.Forms.Panel pnlStandard;
         private System.Windows.Forms.TextBox txtShow;
         private System.Windows.Forms.Button btnEqual;
-        private System.Windows.Forms.Button button53;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClearEntry;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSqrt;
@@ -416,7 +420,7 @@
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnDiv;
         private System.Windows.Forms.Button btnNegate;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnPoint;
         private System.Windows.Forms.TextBox txtShowCount;
 
     }

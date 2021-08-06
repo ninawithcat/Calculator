@@ -28,7 +28,10 @@ namespace winformCalculator
         {
 
         }
+        private void btn0_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnNumber_Click(object sender, EventArgs e)        //取值
         {
             if (sign == "")
@@ -60,6 +63,24 @@ namespace winformCalculator
             txtShowCount.Text = count1.ToString() + ((Button)sender).Text;     //符号赋给计算区
             sign = ((Button)sender).Text;                                      //符号赋值
         }
+        /*public void btnElse(double count1,double count2,string sign)
+        {
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = -count1;
+                txtShow.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                count2 = -count2;
+                txtShow.Text = count2.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 == 0)
+            {
+                count2 = -count1;
+                txtShow.Text = count2.ToString();
+            }
+        }*/
         private void btnNegate_Click(object sender, EventArgs e)               //取反
         {
             if (count1 != 0 && count2 == 0 && sign =="")
@@ -132,6 +153,10 @@ namespace winformCalculator
                 txtShow.Text = count2.ToString();
             }
         }
+        private void btnPoint_Click(object sender, EventArgs e)              //小数点
+        {
+
+        }
         private void btnEqual_Click(object sender, EventArgs e)              //运算 
         {
                 switch (sign)
@@ -170,20 +195,63 @@ namespace winformCalculator
             count1 = 0;
             count2 = 0;
             result = '\0';
-            txtShow.Text = "";
             txtShowCount.Text = "";
+            txtShow.Text = count1.ToString();
         }
 
         private void btnClearEntry_Click(object sender, EventArgs e)    //清除结果(CE)
         {
-            txtShow.Text = "";
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = 0;
+                txtShowCount.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                count2 = 0;
+                txtShow.Text = count2.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 == 0)
+            {
+                count2 = 0;
+                txtShow.Text = count2.ToString();
+            }
+            txtShow.Text = "0";
         }
-
+        private void btnBack_Click(object sender, EventArgs e)          //Back
+        {
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = Math.Floor(count1 / 10);      //Math.Floor()取整数的较小数
+                txtShow.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                if (count2 >= 10)
+                    count2 = Math.Floor(count2 / 10);
+                else
+                    count2 = 0;
+                txtShow.Text = count2.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 == 0)
+            {
+                count2 = 0;
+                txtShow.Text = count2.ToString();
+            }
+            if(result!= 0)
+            {
+                txtShowCount.Text = "";
+            }
+        }
         private void txtShow_TextChanged(object sender, EventArgs e)    //改变txtBox里数字的大小
         {
             while (txtShow.Text.Length > 10 && txtShow.Font.Size != 18)
             {
                 txtShow.Font = new Font(txtShow.Font.FontFamily, 18, txtShow.Font.Style); 
+            }
+            while (txtShow.Text.Length < 10 && txtShow.Font.Size == 18)
+            {
+                txtShow.Font = new Font(txtShow.Font.FontFamily, 36, txtShow.Font.Style);
             }
         }
     }
