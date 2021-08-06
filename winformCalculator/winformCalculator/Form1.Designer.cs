@@ -37,7 +37,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSqrt = new System.Windows.Forms.Button();
             this.btnReciprocal = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
             this.BtnSq = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             this.pnlStandard.Controls.Add(this.btnClear);
             this.pnlStandard.Controls.Add(this.btnSqrt);
             this.pnlStandard.Controls.Add(this.btnReciprocal);
-            this.pnlStandard.Controls.Add(this.button50);
+            this.pnlStandard.Controls.Add(this.btnPercent);
             this.pnlStandard.Controls.Add(this.btn9);
             this.pnlStandard.Controls.Add(this.BtnSq);
             this.pnlStandard.Controls.Add(this.btn8);
@@ -181,15 +181,16 @@
             this.btnReciprocal.UseVisualStyleBackColor = true;
             this.btnReciprocal.Click += new System.EventHandler(this.btnReciprocal_Click);
             // 
-            // button50
+            // btnPercent
             // 
-            this.button50.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
-            this.button50.Location = new System.Drawing.Point(10, 199);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(91, 52);
-            this.button50.TabIndex = 0;
-            this.button50.Text = "%";
-            this.button50.UseVisualStyleBackColor = true;
+            this.btnPercent.Font = new System.Drawing.Font("微软雅黑 Light", 12F);
+            this.btnPercent.Location = new System.Drawing.Point(10, 199);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(91, 52);
+            this.btnPercent.TabIndex = 0;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
             // btn9
             // 
@@ -403,7 +404,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSqrt;
         private System.Windows.Forms.Button btnReciprocal;
-        private System.Windows.Forms.Button button50;
+        private System.Windows.Forms.Button btnPercent;
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button BtnSq;
         private System.Windows.Forms.Button btn8;

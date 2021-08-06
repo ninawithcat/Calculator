@@ -34,6 +34,13 @@ namespace winformCalculator
         }
         private void btnNumber_Click(object sender, EventArgs e)        //取值
         {
+            /*if (result != 0 && count1 != 0 && count2 != 0)
+            {
+                ts = result;
+                count1 = 0;
+                count2 = 0;
+                sign = "";      
+            }*/
             if (sign == "")
             {
                 if (sign == "" && count1 != 0 && ts == 0)
@@ -81,7 +88,7 @@ namespace winformCalculator
                 txtShow.Text = count2.ToString();
             }
         }*/
-        private void btnNegate_Click(object sender, EventArgs e)               //取反
+        private void btnNegate_Click(object sender, EventArgs e)               //取反(+/-)
         {
             if (count1 != 0 && count2 == 0 && sign =="")
             {
@@ -99,7 +106,7 @@ namespace winformCalculator
                 txtShow.Text = count2.ToString();
             }
         }
-        private void btnReciprocal_Click(object sender, EventArgs e)         //倒数
+        private void btnReciprocal_Click(object sender, EventArgs e)         //倒数(1/x)
         {
             if (count1 != 0 && count2 == 0 && sign == "")
             {
@@ -117,7 +124,7 @@ namespace winformCalculator
                 txtShow.Text = count2.ToString();
             }
         }
-        private void BtnSq_Click(object sender, EventArgs e)                 //平方 
+        private void BtnSq_Click(object sender, EventArgs e)                 //平方(x²)
         {
             if (count1 != 0 && count2 == 0 && sign == "")
             {
@@ -135,7 +142,7 @@ namespace winformCalculator
                 txtShow.Text = count2.ToString();
             }
         }
-        private void btnSqrt_Click(object sender, EventArgs e)               //开平方
+        private void btnSqrt_Click(object sender, EventArgs e)               //开平方(²√x)
         {
             if (count1 != 0 && count2 == 0 && sign == "")
             {
@@ -159,23 +166,25 @@ namespace winformCalculator
         }
         private void btnEqual_Click(object sender, EventArgs e)              //运算 
         {
-                switch (sign)
-                {
-                    case "+":
-                        result = count1 + count2;
-                        break;
+            /*if(result != 0)
+                count1 = result;*/
+            switch (sign)
+            {
+                case "+":
+                    result = count1 + count2;
+                    break;
 
-                    case "-":
-                        result = count1 - count2;
-                        break;
+                case "-":
+                    result = count1 - count2;
+                    break;
 
-                    case "×":
-                        result = count1 * count2;
-                        break;
+                case "×":
+                    result = count1 * count2;
+                    break;
 
-                    case "÷":
-                        result = count1 / count2;
-                        break;
+                case "÷":
+                    result = count1 / count2;
+                    break;
                 }
 
             if (sign != "" )
@@ -186,8 +195,22 @@ namespace winformCalculator
             ts = result;
             count1 = 0;
             count2 = 0;
-            sign = "";
-            
+            sign = "";        
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)       //百分号(%)
+        {
+            if (count1 != 0 && count2 == 0 && sign == "")
+            {
+                count1 = 0;
+                txtShow.Text = count1.ToString();
+            }
+            if (count1 != 0 && sign != "" && count2 != 0)
+            {
+                count2 = count1*count2/100;
+                txtShow.Text = count2.ToString();
+                txtShowCount.Text = count2.ToString() + sign + count2.ToString();
+            }
         }
         private void btnClear_Click(object sender, EventArgs e)         //清除全部(C)
         {
@@ -254,5 +277,6 @@ namespace winformCalculator
                 txtShow.Font = new Font(txtShow.Font.FontFamily, 36, txtShow.Font.Style);
             }
         }
+
     }
 }
