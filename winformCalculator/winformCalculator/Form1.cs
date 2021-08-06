@@ -162,7 +162,14 @@ namespace winformCalculator
         }
         private void btnPoint_Click(object sender, EventArgs e)              //小数点
         {
-
+            if (txtShow.Text == "0")
+                txtShow.Text = "0.";
+            else if (txtShow.Text.IndexOf(".") >= 0) 
+            { 
+                //MessageBox.Show("已经输入小数点,无须再次输入", "提示");
+            }
+            else
+                txtShow.Text = txtShow.Text + ".";
         }
         private void btnEqual_Click(object sender, EventArgs e)              //运算 
         {
